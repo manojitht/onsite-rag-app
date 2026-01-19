@@ -50,9 +50,9 @@ Required JSON Structure as Output:
   "answer": "...",
   "intent": "...",
   "sources": [
-    {{"id": 7, "relevance": 0.94}}
+    {{"id": 7, "relevance": 0.00}} //use float value for relevance eg. 0.85
   ],
-  "confidence": 0.91,
+  "confidence": 0.00, //use float value for confidence eg. 0.85
   "applied_filters": ["CURRENT", "production", "EMEA", "security>=confidential"],
   "conflict_resolution": {{
     "excluded": [8],
