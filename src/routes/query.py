@@ -41,6 +41,7 @@ async def reasoning(request: QueryRequest):
 
         return QueryResponse(
             answer=agent_data.get("answer", "No Answer"),
+            intent=agent_data.get("intent", "UNKNOWN"),
             sources=agent_data.get("sources", []),
             confidence=agent_data.get("confidence", 0.0),
             applied_filters=agent_data.get("applied_filters", []),

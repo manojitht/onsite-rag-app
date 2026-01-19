@@ -16,6 +16,7 @@ def parse_agent_response(full_text: str):
         print(f"JSON Parse Error: {e}")
         return {
             "answer": "PARSING_ERROR",
+            "intent": "UNKNOWN",
             "sources": [],
             "confidence": 0.0,
             "applied_filters": [],

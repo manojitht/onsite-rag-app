@@ -8,11 +8,8 @@ class QueryRequest(BaseModel):
 
 class QueryResponse(BaseModel):
     answer: str
+    intent: str
     sources: List[dict]
     confidence: float
     applied_filters: List[str]
     conflict_resolution: Optional[dict] = None
-
-
-
-

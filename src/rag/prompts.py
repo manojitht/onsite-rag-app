@@ -11,6 +11,31 @@ Implement rules:
 •	Environment filter:
     o	production excludes dev/staging-only docs
 
+Intent Detection:
+Classify query into:
+•	SECURITY
+•	COMPLIANCE
+•	COST
+•	AVAILABILITY
+•	INCIDENT
+•	IRRELEVANT
+ 
+Routing:
+•	SECURITY → boost docs with compliance_tags
+•	COST → boost doc 9
+•	IRRELEVANT → cafeteria/party downrank to near zero
+
+Contradiction Detection
+Example:
+•	If one doc says "optional backups" (Doc 1)
+•	Another says "mandatory backups" (Doc 2)
+System must return:
+Conflict:
+Doc 1: DEPRECATED
+Doc 2: CURRENT (supersedes 1)
+Resolution: Doc 2 enforced
+
+
 STUDENT CONTEXT (Retrieved Documents):
 {context}
 
@@ -23,6 +48,7 @@ Generate a single valid JSON object containing both the decision logic and the f
 Required JSON Structure as Output:
 {{
   "answer": "...",
+  "intent": "...",
   "sources": [
     {{"id": 7, "relevance": 0.94}}
   ],
